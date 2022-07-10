@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.roh.practice.main.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_seekbarFragment"
+            app:destination="@id/seekbarFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_snackbarFragment"
+            app:destination="@id/snackbarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekbarFragment"
+        android:name="com.roh.practice.seekbar.SeekbarFragment"
+        android:label="fragment_seekbar"
+        tools:layout="@layout/fragment_seekbar" />
+    <fragment
+        android:id="@+id/snackbarFragment"
+        android:name="com.roh.practice.snackbar.SnackbarFragment"
+        android:label="fragment_snackbar"
+        tools:layout="@layout/fragment_snackbar" />
+</navigation>
