@@ -1,4 +1,4 @@
-package com.roh.practice.snackbar.util
+package com.roh.practice.ui.snackbar.util
 
 import android.view.View
 import android.view.ViewGroup

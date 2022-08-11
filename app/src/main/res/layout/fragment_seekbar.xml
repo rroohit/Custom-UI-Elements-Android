@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".seekbar.SeekbarFragment">
+    tools:context=".ui.seekbar.SeekbarFragment">
 
     <SeekBar
         android:id="@+id/seekbar"
@@ -15,7 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:splitTrack="false"
-        android:progressBackgroundTint="@color/black"
         android:progressDrawable="@drawable/seekbar_background_progress"
         android:thumb="@drawable/ic_down_arrow"/>
 

@@ -1,4 +1,4 @@
-package com.roh.practice.seekbar
+package com.roh.practice.ui.seekbar
 
 import androidx.lifecycle.ViewModel
 

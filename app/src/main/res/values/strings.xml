@@ -2,6 +2,8 @@
     <string name="app_name">PracticeUi</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="android_custom_elements">Android Custom Elements</string>
+    <string name="snackbar_msg">Didn\'t found any pokemon, let\'s try again.</string>
 
 
 </resources>

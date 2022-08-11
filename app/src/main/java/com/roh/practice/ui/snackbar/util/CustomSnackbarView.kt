@@ -1,4 +1,4 @@
-package com.roh.practice.snackbar
+package com.roh.practice.ui.snackbar.util
 
 import android.animation.AnimatorSet
 import android.content.Context

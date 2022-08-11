@@ -1,4 +1,4 @@
-package com.roh.practice.snackbar
+package com.roh.practice.ui.snackbar
 
 import android.graphics.Color
 import android.os.Bundle
@@ -11,6 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.snackbar.Snackbar.SnackbarLayout
 import com.roh.practice.R
 import com.roh.practice.databinding.FragmentSnackbarBinding
+import com.roh.practice.ui.snackbar.util.CustomSnackbar
 
 
 class SnackbarFragment : Fragment() {
@@ -23,7 +24,6 @@ class SnackbarFragment : Fragment() {
 
         val dpHeight = (resources.displayMetrics.heightPixels * 0.8).toInt()
 
-        println("rohit height $dpHeight")
 
         binding.btnShowSnackbar.setOnClickListener {
 
@@ -52,7 +52,7 @@ class SnackbarFragment : Fragment() {
             snackbar.show()
 
 
-//            CustomSnackbar.makeSnackbar(binding.rootContainer, "Customise me", Snackbar.LENGTH_LONG)?.show()
+            CustomSnackbar.makeSnackbar(binding.rootContainer, "Customise me", Snackbar.LENGTH_LONG)?.show()
 
         }
 

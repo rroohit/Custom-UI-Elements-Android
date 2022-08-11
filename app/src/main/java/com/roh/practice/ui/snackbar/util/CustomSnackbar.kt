@@ -1,11 +1,9 @@
-package com.roh.practice.snackbar
+package com.roh.practice.ui.snackbar.util
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.roh.practice.R
-import com.roh.practice.snackbar.util.findSuitableParent
 
 class CustomSnackbar(
     parent: ViewGroup,
