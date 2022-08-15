@@ -14,8 +14,8 @@
             android:id="@+id/action_homeFragment_to_seekbarFragment"
             app:destination="@id/seekbarFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_snackbarFragment"
-            app:destination="@id/snackbarFragment" />
+            android:id="@+id/action_homeFragment_to_circularImageViewFragment"
+            app:destination="@id/circularImageViewFragment" />
     </fragment>
     <fragment
         android:id="@+id/seekbarFragment"
@@ -23,8 +23,8 @@
         android:label="fragment_seekbar"
         tools:layout="@layout/fragment_seekbar" />
     <fragment
-        android:id="@+id/snackbarFragment"
-        android:name="com.roh.practice.ui.snackbar.SnackbarFragment"
-        android:label="fragment_snackbar"
-        tools:layout="@layout/fragment_snackbar" />
+        android:id="@+id/circularImageViewFragment"
+        android:name="com.roh.practice.ui.circular_image_view.CircularImageViewFragment"
+        android:label="fragment_circular_image_view"
+        tools:layout="@layout/fragment_circular_image_view" />
 </navigation>

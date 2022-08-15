@@ -1,6 +1,6 @@
-package com.roh.practice.model
+package com.roh.practice.domain.model
 
-import com.roh.practice.data.HomeDestinations
+import com.roh.practice.domain.util.HomeDestinations
 
 data class HomeItem(
     val CardId: Int? = null,

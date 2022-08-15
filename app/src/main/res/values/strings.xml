@@ -4,6 +4,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="android_custom_elements">Android Custom Elements</string>
     <string name="snackbar_msg">Didn\'t found any pokemon, let\'s try again.</string>
+    <string name="seekbar">Seekbar</string>
+    <string name="circular_imageview">Circular ImageView</string>
 
 
 </resources>
