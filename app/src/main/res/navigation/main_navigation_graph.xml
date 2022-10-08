@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_circularImageViewFragment"
             app:destination="@id/circularImageViewFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_workManagerFragment"
+            app:destination="@id/workManagerFragment" />
     </fragment>
     <fragment
         android:id="@+id/seekbarFragment"
@@ -27,4 +30,9 @@
         android:name="com.roh.practice.ui.circular_image_view.CircularImageViewFragment"
         android:label="fragment_circular_image_view"
         tools:layout="@layout/fragment_circular_image_view" />
+    <fragment
+        android:id="@+id/workManagerFragment"
+        android:name="com.roh.practice.ui.workmanager.WorkManagerFragment"
+        android:label="fragment_work_manager"
+        tools:layout="@layout/fragment_work_manager" />
 </navigation>

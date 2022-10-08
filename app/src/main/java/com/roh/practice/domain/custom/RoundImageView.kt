@@ -17,7 +17,7 @@ class RoundImageView(
 
     init {
         paint.style = Paint.Style.FILL
-        paint.color = Color.TRANSPARENT
+        paint.color = Color.DKGRAY
         paint.isAntiAlias = true
 
 
@@ -31,7 +31,7 @@ class RoundImageView(
         val w = width.toFloat()
         val rectF = getSquareRect(w)
 
-        cornerPath.addRoundRect(rectF, w/5,w/5, Path.Direction.CCW)
+        cornerPath.addRoundRect(rectF, w/6,w/6, Path.Direction.CCW)
 
         canvas.drawRoundRect(rectF, w / 6, w / 6, paint)
 

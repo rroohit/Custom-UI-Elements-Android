@@ -53,7 +53,10 @@ class HomeFragment : Fragment(), OnItemClickListener {
             HomeDestinations.SNACKBAR -> {
 
             }
-            null -> TODO()
+            HomeDestinations.WORKMANAGER -> {
+                findNavController().navigate(R.id.action_homeFragment_to_workManagerFragment)
+            }
+            else -> Unit
         }
 
     }

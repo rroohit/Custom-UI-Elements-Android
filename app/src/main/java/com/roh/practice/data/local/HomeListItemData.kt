@@ -1,8 +1,7 @@
 package com.roh.practice.data.local
 
-import com.roh.practice.R
-import com.roh.practice.domain.util.HomeDestinations
 import com.roh.practice.domain.model.HomeItem
+import com.roh.practice.domain.util.HomeDestinations
 
 class HomeListItemData {
 
@@ -21,7 +20,7 @@ class HomeListItemData {
             HomeItem(
                 CardId = 2,
                 CardName = "Custom Seekbar",
-                CardImage = R.drawable.ic_seekbar,
+                CardImage = null,
                 HomeDestination = HomeDestinations.SEEKBAR,
                 Description = "",
                 LastModifyDate = ""
@@ -32,6 +31,14 @@ class HomeListItemData {
                 CardName = "Custom Snackbar",
                 CardImage = null,
                 HomeDestination = HomeDestinations.SNACKBAR,
+                Description = "",
+                LastModifyDate = ""
+            ),
+            HomeItem(
+                CardId = 4,
+                CardName = "Work Manager",
+                CardImage = null,
+                HomeDestination = HomeDestinations.WORKMANAGER,
                 Description = "",
                 LastModifyDate = ""
             )
