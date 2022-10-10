@@ -6,6 +6,7 @@ import androidx.work.CoroutineWorker
 import androidx.work.Data
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
+import com.roh.practice.domain.repository.GetRefreshedTokens
 import com.roh.practice.domain.util.WorkerKeys
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
@@ -19,12 +20,16 @@ class DemoWorkManager
 constructor(
     @Assisted context: Context,
     @Assisted workerParams: WorkerParameters,
+    private val repo : GetRefreshedTokens
 ) : CoroutineWorker(context, workerParams) {
 
     override suspend fun doWork(): Result {
         return try {
             withContext(Dispatchers.IO) {
-                val outPutData = workDataOf(WorkerKeys.TOKEN_STR to "Here is Token")
+
+                val str = repo.getRefreshedTokens()
+
+                val outPutData = workDataOf(WorkerKeys.TOKEN_STR to str)
 
                 Result.success(outPutData)
             }
