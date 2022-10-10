@@ -4,7 +4,7 @@ import androidx.work.OneTimeWorkRequest
 
 interface GetRefreshedTokens {
 
-    suspend fun getRefreshedTokens(): OneTimeWorkRequest
+    suspend fun getRefreshedTokens(): String
 
 
 }

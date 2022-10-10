@@ -62,6 +62,12 @@ dependencies {
     implementation "androidx.work:work-runtime-ktx:2.7.1"
     implementation "androidx.work:work-multiprocess:2.7.1"
 
+    //Ktor
+    implementation 'io.ktor:ktor-client-core:2.1.2'
+    implementation 'io.ktor:ktor-client-android:2.1.2'
+    implementation 'io.ktor:ktor-client-okhttp:2.1.2'
+
+
 }
 
 kapt {
