@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tool:ignore="ContentDescription"
         android:scaleType="centerCrop"
-        android:src="@mipmap/test_img_2"/>
+        android:src="#A27AEA"/>
 
     <TextView
         android:id="@+id/txt_title"

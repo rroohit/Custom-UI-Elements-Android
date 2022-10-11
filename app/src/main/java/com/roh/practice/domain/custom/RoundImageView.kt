@@ -17,7 +17,7 @@ class RoundImageView(
 
     init {
         paint.style = Paint.Style.FILL
-        paint.color = Color.DKGRAY
+        paint.color = Color.TRANSPARENT
         paint.isAntiAlias = true
 
 
