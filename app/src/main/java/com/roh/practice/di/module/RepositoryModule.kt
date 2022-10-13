@@ -1,4 +1,4 @@
-package com.roh.practice.di
+package com.roh.practice.di.module
 
 import androidx.work.WorkManager
 import com.roh.practice.data.repository.GetRefreshedTokensImpl

@@ -26,12 +26,12 @@ class Resource<T> constructor(
             return Resource(status = Status.CACHED, data, message = "cache", timestamp = timestamp)
         }
 
-        fun <T> reAuthenticate(): Resource<T> {
-            return Resource(status = Status.REAUTH)
+        fun <T> getNewTokens(): Resource<T> {
+            return Resource(status = Status.NEEDNEWTOKEN)
         }
 
         fun <T> logout(): Resource<T> {
-            return Resource(status = Status.LOGOUT)
+            return Resource(status = Status.LOGOUT, message = "Getting new token failed")
         }
 
     }
@@ -43,6 +43,6 @@ enum class Status {
     SUCCESS,
     ERROR,
     CACHED,
-    REAUTH,
+    NEEDNEWTOKEN,
     LOGOUT
 }

@@ -1,4 +1,4 @@
-package com.roh.practice.di
+package com.roh.practice.di.main
 
 import android.app.Application
 import androidx.hilt.work.HiltWorkerFactory

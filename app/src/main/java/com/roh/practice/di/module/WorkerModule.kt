@@ -1,4 +1,4 @@
-package com.roh.practice.di
+package com.roh.practice.di.module
 
 import android.content.Context
 import androidx.work.WorkManager
