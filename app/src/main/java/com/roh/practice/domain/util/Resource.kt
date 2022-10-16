@@ -5,7 +5,6 @@ class Resource<T> constructor(
     val status: Status = Status.LOADING,
     var data: T? = null,
     val message: String? = null,
-    val timestamp: Long? = null
 ) {
 
     companion object {
@@ -14,16 +13,16 @@ class Resource<T> constructor(
             return Resource(status = Status.LOADING, data = data, message = "loading")
         }
 
-        fun <T> success(data: T?, timestamp: Long?): Resource<T> {
-            return Resource(Status.SUCCESS, data = data, message = "success", timestamp = timestamp)
+        fun <T> success(data: T?): Resource<T> {
+            return Resource(Status.SUCCESS, data = data, message = "success")
         }
 
-        fun <T> error(msg: String?, data: T?, timestamp: Long?): Resource<T> {
-            return Resource(status = Status.ERROR, data, message = msg, timestamp = timestamp)
+        fun <T> error(message: String?, data: T?): Resource<T> {
+            return Resource(status = Status.ERROR, data = data, message = message)
         }
 
-        fun <T> cached(data: T?, timestamp: Long?): Resource<T> {
-            return Resource(status = Status.CACHED, data, message = "cache", timestamp = timestamp)
+        fun <T> cached(data: T?): Resource<T> {
+            return Resource(status = Status.CACHED, data = data, message = "cached data")
         }
 
         fun <T> getNewTokens(): Resource<T> {

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.roh.practice.R
 import com.roh.practice.domain.util.HomeDestinations
-import com.roh.practice.data.local.HomeListItemData.Companion.homeListData
+import com.roh.practice.data.local.home.HomeListItemData.Companion.homeListData
 import com.roh.practice.databinding.FragmentHomeBinding
 import com.roh.practice.domain.model.HomeItem
 import com.roh.practice.ui.main.util.HomeItemAdapter

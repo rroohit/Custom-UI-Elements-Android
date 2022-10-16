@@ -1,5 +1,6 @@
 package com.roh.practice.data.repository
 
+import com.roh.practice.data.local.dao.TokenDao
 import com.roh.practice.domain.model.User
 import com.roh.practice.domain.repository.GetRefreshedTokens
 import io.ktor.client.*
@@ -11,14 +12,12 @@ import javax.inject.Inject
 class GetRefreshedTokensImpl
 @Inject
 constructor(
-    private val httpClient: HttpClient
+    private val httpClient: HttpClient,
+    private val tokenDao: TokenDao
 ) : GetRefreshedTokens {
 
     override suspend fun getRefreshedTokens(): String {
         val user: User = httpClient.get("https://jsonplaceholder.typicode.com/todos/1").body()
-
-        println("stringBody => $user")
-
         return user.title
     }
 

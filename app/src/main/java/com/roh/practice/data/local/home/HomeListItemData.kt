@@ -1,4 +1,4 @@
-package com.roh.practice.data.local
+package com.roh.practice.data.local.home
 
 import com.roh.practice.domain.model.HomeItem
 import com.roh.practice.domain.util.HomeDestinations

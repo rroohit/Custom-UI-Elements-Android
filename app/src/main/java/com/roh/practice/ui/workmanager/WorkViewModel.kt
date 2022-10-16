@@ -10,6 +10,8 @@ import com.roh.practice.domain.repository.TokenWorker
 import com.roh.practice.domain.util.WorkerKeys
 import com.roh.practice.domain.workmanager.DemoWorkManager
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -20,6 +22,7 @@ class WorkViewModel
 @Inject constructor(
     private val tokenWorker: TokenWorker,
     private val workManager: WorkManager,
+    private val coroutineDispatcher: CoroutineScope
 ) : ViewModel() {
 
     private val _token = MutableStateFlow("Fetching Token...")
