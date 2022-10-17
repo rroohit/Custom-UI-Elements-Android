@@ -30,7 +30,7 @@ object NetworkModule {
         }
         expectSuccess = true
         HttpResponseValidator {
-            handleResponseExceptionWithRequest { exception, request ->
+            handleResponseExceptionWithRequest { exception, _ ->
                 val clientException = exception as? ClientRequestException ?: return@handleResponseExceptionWithRequest
                 val exceptionResponse = clientException.response
                 if (exceptionResponse.status == HttpStatusCode.NotFound) {

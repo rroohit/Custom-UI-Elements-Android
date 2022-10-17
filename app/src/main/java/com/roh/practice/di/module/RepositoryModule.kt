@@ -1,6 +1,7 @@
 package com.roh.practice.di.module
 
 import androidx.work.WorkManager
+import com.roh.practice.data.local.dao.TokenDao
 import com.roh.practice.data.repository.GetRefreshedTokensImpl
 import com.roh.practice.data.repository.TokenWorkerImpl
 import com.roh.practice.domain.repository.GetRefreshedTokens
@@ -18,14 +19,17 @@ object RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideTokenWorker(workManager: WorkManager) : TokenWorker {
+    fun provideTokenWorker(workManager: WorkManager): TokenWorker {
         return TokenWorkerImpl(workManager)
     }
 
     @Singleton
     @Provides
-    fun provideTokenRepos(httpClient: HttpClient): GetRefreshedTokens {
-        return GetRefreshedTokensImpl(httpClient)
+    fun provideTokenRepos(
+        httpClient: HttpClient,
+        tokenDao: TokenDao
+    ): GetRefreshedTokens {
+        return GetRefreshedTokensImpl(httpClient, tokenDao)
     }
 
 
