@@ -31,11 +31,18 @@ constructor(
         var throwException = true
     }
 
+    override suspend fun getUserData(): User {
+        val user: User = httpClient.get("https://jsonplaceholder.typicode.com/todos/1").body()
+        return user
+    }
+
     @kotlin.jvm.Throws(MissingPageException::class)
     override suspend fun getRefreshedTokens(): String {
         getRefreshedTokensCount++
         val user: User = httpClient.get("https://jsonplaceholder.typicode.com/todos/1").body()
+
         Log.d("REPO_IMPL", "getRefreshedTokens: $getRefreshedTokensCount user token => $user")
+
         if (throwException) {
             throw MissingPageException("need new token")
         }
@@ -46,11 +53,17 @@ constructor(
     override suspend fun getNewToken() =
         networkRequestHandler(
             loadFromLocalDB = {
-                flow { emit("from db") }
+                val user = User(
+                    id = 1,
+                    userId = "charlie",
+                    title = "rohit",
+                    completed = true
+                )
+                flow { emit(user) }
             },
             loadFromNetworkRequest = {
                 delay(2000L)
-                getRefreshedTokens()
+                getUserData()
             },
             saveNetworkResult = {
                 count++
@@ -62,12 +75,12 @@ constructor(
             },
             onTokenExpire = {
                 //get new token
-                "newToken"
+                getRefreshedTokens()
             },
             afterNewTokenNetworkRequest = { newToken ->
                 //we had new token get new data form network
                 throwException = false
-                getRefreshedTokens()
+                getUserData()
 
             }
         )

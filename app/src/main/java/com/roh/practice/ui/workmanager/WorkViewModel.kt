@@ -42,7 +42,7 @@ class WorkViewModel
                         _token.emit("loading")
                     }
                     Status.SUCCESS -> {
-                        rsp.data?.let { _token.emit(it) }
+                        rsp.data?.let { _token.emit(it.toString()) }
 
                     }
                     Status.ERROR -> {
@@ -50,11 +50,11 @@ class WorkViewModel
 
                     }
                     Status.CACHED -> {
-                        _token.emit("cached => ${rsp.data}")
+                        _token.emit("${rsp.data}")
 
                     }
                     Status.NEEDNEWTOKEN -> {
-                        _token.emit("need new token")
+                        _token.emit("need new token 2")
 
                     }
                     Status.LOGOUT -> {
