@@ -54,7 +54,7 @@ class WorkViewModel
 
                     }
                     Status.NEEDNEWTOKEN -> {
-                        _token.emit("need new token 2")
+                        _token.emit("${rsp.message}")
 
                     }
                     Status.LOGOUT -> {

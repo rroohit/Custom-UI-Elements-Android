@@ -33,6 +33,9 @@ constructor(
 
     override suspend fun getUserData(): User {
         val user: User = httpClient.get("https://jsonplaceholder.typicode.com/todos/1").body()
+        if (throwException) {
+            throw MissingPageException("need new token")
+        }
         return user
     }
 
@@ -43,9 +46,9 @@ constructor(
 
         Log.d("REPO_IMPL", "getRefreshedTokens: $getRefreshedTokensCount user token => $user")
 
-        if (throwException) {
-            throw MissingPageException("need new token")
-        }
+//        if (throwException) {
+//            throw MissingPageException("Invalid token")
+//        }
         return user.title
     }
 
@@ -62,6 +65,7 @@ constructor(
                 flow { emit(user) }
             },
             loadFromNetworkRequest = {
+                throwException = true
                 delay(2000L)
                 getUserData()
             },
@@ -75,11 +79,12 @@ constructor(
             },
             onTokenExpire = {
                 //get new token
+                throwException = false
+                delay(3000L)
                 getRefreshedTokens()
             },
             afterNewTokenNetworkRequest = { newToken ->
                 //we had new token get new data form network
-                throwException = false
                 getUserData()
 
             }

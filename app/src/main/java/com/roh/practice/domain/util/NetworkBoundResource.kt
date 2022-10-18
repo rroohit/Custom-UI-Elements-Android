@@ -34,12 +34,13 @@ inline fun <ResultType, RequestType, NewToken> networkRequestHandler(
 
                     Resource.success(it)
                 }
+
+
             } catch (error: Exception) {
-                Log.d("NETWORK_BOUND", "networkRequestHandler: 3 error => ${e.localizedMessage}")
+                Log.d("NETWORK_BOUND", "networkRequestHandler: 2 error => ${e.localizedMessage}")
                 flow { emit(Resource.getNewTokens()) }
 
             }
-
 
         } else {
             Log.d("NETWORK_BOUND", "networkRequestHandler: 2 error => ${e.localizedMessage}")
