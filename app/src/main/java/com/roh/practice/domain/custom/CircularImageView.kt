@@ -7,6 +7,7 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.util.Log
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.graphics.drawable.toBitmap
 
@@ -18,6 +19,7 @@ class CircularImageView(
 
     private val paintCircle = Paint()
     private val circularPath = Path()
+    var count = 0
 
 
     init {
@@ -30,6 +32,8 @@ class CircularImageView(
     }
 
     override fun onDraw(canvas: Canvas) {
+        count++
+        Log.d("CIRCULAR_IMAGE", "onDraw: $count" )
         val d = drawable
         val w = width
         val c = width/2F
@@ -43,6 +47,7 @@ class CircularImageView(
             canvas.clipPath(circularPath)
 
             canvas.drawBitmap(bitmap, 0F, 0F, null)
+//            super.onDraw(canvas)
 
 
         }

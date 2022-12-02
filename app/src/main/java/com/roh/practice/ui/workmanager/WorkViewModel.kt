@@ -16,6 +16,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -35,41 +36,44 @@ class WorkViewModel
 
         viewModelScope.launch {
 
-            repo.getNewToken().collect { rsp ->
-                Log.d("VIEW_MODEL", "init : started => ${rsp.status}")
-                when(rsp.status) {
-                    Status.LOADING -> {
-                        _token.emit("loading")
-                    }
-                    Status.SUCCESS -> {
-                        rsp.data?.let { _token.emit(it.toString()) }
+            repo.getNewToken()
+                .catch {
 
-                    }
-                    Status.ERROR -> {
-                        _token.emit(rsp.message.toString())
+                }
+                .collect { rsp ->
+                    Log.d("VIEW_MODEL", "init : started => ${rsp.status}")
+                    when (rsp.status) {
+                        Status.LOADING -> {
+                            _token.emit("loading")
+                        }
+                        Status.SUCCESS -> {
+                            rsp.data?.let { _token.emit(it.toString()) }
 
-                    }
-                    Status.CACHED -> {
-                        _token.emit("${rsp.data}")
+                        }
+                        Status.ERROR -> {
+                            _token.emit(rsp.message.toString())
 
-                    }
-                    Status.NEEDNEWTOKEN -> {
-                        _token.emit("${rsp.message}")
+                        }
+                        Status.CACHED -> {
+                            _token.emit("${rsp.data}")
 
-                    }
-                    Status.LOGOUT -> {
-                        _token.emit("logout")
+                        }
+                        Status.NEEDNEWTOKEN -> {
+                            _token.emit("${rsp.message}")
 
+                        }
+                        Status.LOGOUT -> {
+                            _token.emit("logout")
+
+                        }
                     }
                 }
-            }
 
 //            workManager.getWorkInfoByIdLiveData(tokenWorker.getRefreshedTokenWorkRequest().id).observeForever { info ->
 //                if (info != null && info.state.isFinished) {
 //                    _token.value =  info.outputData.getString(WorkerKeys.TOKEN_STR) ?: "empty initial"
 //                }
 //            }
-
 
 
         }

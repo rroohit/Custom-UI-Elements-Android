@@ -6,6 +6,7 @@ import com.roh.practice.data.local.dto.TokenDto
 import com.roh.practice.domain.model.User
 import com.roh.practice.domain.repository.GetRefreshedTokens
 import com.roh.practice.domain.util.MissingPageException
+import com.roh.practice.domain.util.Resource
 import com.roh.practice.domain.util.networkRequestHandler
 import io.ktor.client.*
 import io.ktor.client.call.*
@@ -14,6 +15,7 @@ import io.ktor.client.statement.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -53,7 +55,7 @@ constructor(
     }
 
 
-    override suspend fun getNewToken() =
+    override suspend fun getNewToken(): Flow<Resource<User>> =
         networkRequestHandler(
             loadFromLocalDB = {
                 val user = User(
