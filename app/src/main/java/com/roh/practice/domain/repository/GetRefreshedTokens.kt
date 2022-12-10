@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface GetRefreshedTokens {
 
+
     suspend fun getUserData(): User
 
     suspend fun getRefreshedTokens(): String

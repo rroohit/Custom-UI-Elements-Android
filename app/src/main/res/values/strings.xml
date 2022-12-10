@@ -8,6 +8,7 @@
     <string name="circular_imageview">Circular ImageView</string>
     <string name="workmanager">Work Manger</string>
     <string name="get_token">Get Token</string>
+    <string name="progress_indicator">Progress Indicator</string>
 
 
 </resources>

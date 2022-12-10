@@ -41,6 +41,14 @@ class HomeListItemData {
                 HomeDestination = HomeDestinations.WORKMANAGER,
                 Description = "",
                 LastModifyDate = ""
+            ) ,
+            HomeItem(
+                CardId = 4,
+                CardName = "Progress Indicator",
+                CardImage = null,
+                HomeDestination = HomeDestinations.PROGRESSINDICATOR,
+                Description = "",
+                LastModifyDate = ""
             )
         )
 

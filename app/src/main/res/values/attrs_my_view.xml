@@ -1,0 +1,18 @@
+<resources>
+    <declare-styleable name="MyView">
+        <attr name="exampleString" format="string" />
+        <attr name="exampleDimension" format="dimension" />
+        <attr name="exampleColor" format="color" />
+        <attr name="exampleDrawable" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressIndicator">
+        <!-- No of indicators on progress bar. >= 2 -->
+        <attr name="noOfIndicators" format="integer" />
+        <!-- No of indicators on progress bar. >= 2 -->
+        <attr name="selectedIndicator" format="integer" />
+
+    </declare-styleable>
+
+
+</resources>

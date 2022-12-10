@@ -4,5 +4,6 @@ enum class HomeDestinations {
     CIRCULARIMAGEVIEW,
     SEEKBAR,
     SNACKBAR,
-    WORKMANAGER
+    WORKMANAGER,
+    PROGRESSINDICATOR
 }

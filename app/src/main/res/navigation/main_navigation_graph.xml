@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_homeFragment_to_workManagerFragment"
             app:destination="@id/workManagerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_progressIndicatorFragment"
+            app:destination="@id/progressIndicatorFragment" />
     </fragment>
     <fragment
         android:id="@+id/seekbarFragment"
@@ -35,4 +38,9 @@
         android:name="com.roh.practice.ui.workmanager.WorkManagerFragment"
         android:label="fragment_work_manager"
         tools:layout="@layout/fragment_work_manager" />
+    <fragment
+        android:id="@+id/progressIndicatorFragment"
+        android:name="com.roh.practice.ui.progress_indicator.ProgressIndicatorFragment"
+        android:label="fragment_progress_indicator"
+        tools:layout="@layout/fragment_progress_indicator" />
 </navigation>

@@ -14,6 +14,7 @@ class TokenWorkerImpl
 constructor(
     private val workManager: WorkManager
 ) : TokenWorker {
+
     override suspend fun getRefreshedTokenWorkRequest(): OneTimeWorkRequest {
         val request = OneTimeWorkRequestBuilder<DemoWorkManager>()
             .build()

@@ -25,6 +25,8 @@ class HomeFragment : Fragment(), OnItemClickListener {
         val adapter = HomeItemAdapter(this)
         binding.homeRv.adapter = adapter
         adapter.submitList(homeListData)
+        findNavController().navigate(R.id.action_homeFragment_to_progressIndicatorFragment)
+
 
     }
 
@@ -42,7 +44,7 @@ class HomeFragment : Fragment(), OnItemClickListener {
     }
 
     override fun onItemClick(homeItem: HomeItem) {
-        when(homeItem.HomeDestination){
+        when (homeItem.HomeDestination) {
             HomeDestinations.CIRCULARIMAGEVIEW -> {
                 findNavController().navigate(R.id.action_homeFragment_to_circularImageViewFragment)
             }
@@ -55,6 +57,10 @@ class HomeFragment : Fragment(), OnItemClickListener {
             }
             HomeDestinations.WORKMANAGER -> {
                 findNavController().navigate(R.id.action_homeFragment_to_workManagerFragment)
+            }
+            HomeDestinations.PROGRESSINDICATOR -> {
+                findNavController().navigate(R.id.action_homeFragment_to_progressIndicatorFragment)
+
             }
             else -> Unit
         }
