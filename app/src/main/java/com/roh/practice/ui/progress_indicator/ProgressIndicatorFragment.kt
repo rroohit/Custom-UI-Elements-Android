@@ -30,7 +30,7 @@ class ProgressIndicatorFragment : Fragment() {
             launch {
 
                 binding.indicator.noOfIndicators = 5
-                binding.indicator.selectedIndicator = 4
+                binding.indicator.selectedIndicator = 2
                 binding.indicator.isIndeterminate = false
             }
 
